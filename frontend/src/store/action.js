@@ -50,7 +50,6 @@ export function setLeaderboardData(payload) {
   }
 }
 
-
 export function getUsers(limit, offset, name){
   return (dispatch) => {
     dispatch(setLoading(true))
