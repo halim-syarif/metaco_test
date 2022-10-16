@@ -1,4 +1,4 @@
-const { Tournament, Tournament_result, Team, Team_member, User } = require("../models");
+const { Tournament, Tournament_result, Team, Team_member, User, Sequelize } = require("../models");
 const calculateReward = require("../helpers/calculateReward");
 const checkHaveBeenWinner = require("../helpers/checkHaveBeenWinner");
 const checkIsCorrectLastWinnerTeamId = require("../helpers/checkIsCorrectLastWinnerTeamId");
@@ -213,11 +213,19 @@ class TournamentController {
   static async getLeaderBoard(req, res, next){
     try {
       const option = {
-        order: [["id", "ASC"]],
-        group: "team_id"
+        attributes: ["id", "name", "captain_id", "logo", [Sequelize.fn("SUM", Sequelize.col("Tournament_results.point")), "total_point"]],
+        include: [{
+          attributes: ["id", "position", "point", "tournament_id"],
+          model: Tournament_result,
+        },{
+          attributes: ["id", "email", "name", "coin"],
+          model: User
+        }],
+        order: [["total_point", "DESC"]],
+        group: "Team.id"
       }
 
-      const data = await Tournament_result.findAll(option)
+      const data = await Team.findAll(option)
       res.status(200).json(data);
     } catch (err) {
       next(err)
