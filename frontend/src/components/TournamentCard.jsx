@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import IcEdit from '../assets/img/edit'
 import IcSave from '../assets/img/save'
 import IcTrash from '../assets/img/trash'
-import { postSaveWinner, deleteWinner, editSaveWinner } from "../store/action";
+import { postSaveWinner, deleteWinner, editSaveWinner, setErrorMessage } from "../store/action";
 
 export default function TournamentCard({ data }) {
   const dispatch = useDispatch()
@@ -35,13 +35,15 @@ export default function TournamentCard({ data }) {
 
   const saveWinner = (position) => {
     const winner = document.getElementById(`winner${position}-` + data.id).value
-    if (winner){
-      if (!winnerList[position]){
-        dispatch(postSaveWinner(data.id, winner, position))
-      } else {
-        dispatch(editSaveWinner(data.id, winner, winnerList[position], position))
+    if (winner != winnerList[position]){
+      if (winner){
+        if (!winnerList[position]){
+          dispatch(postSaveWinner(data.id, winner, position))
+        } else {
+          dispatch(editSaveWinner(data.id, winner, winnerList[position], position))
+        }
       }
-    }
+    } 
     changeEditMode(position)
   }
 

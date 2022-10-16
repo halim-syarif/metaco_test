@@ -1,5 +1,16 @@
 # metaco_test
 
+> BackEnd Test
+
+```
+$ cd backend
+$ npm run migrate-test
+$ npm run test
+
+```
+
+<br>
+
 > How To run on localhost
 
 ```
