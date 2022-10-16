@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Tournament_result.belongsTo(models.Team, {foreignKey: "team_id"})
     }
   }
   Tournament_result.init({

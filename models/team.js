@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     
     static associate(models) {
       Team.belongsTo(models.User, {foreignKey: 'captain_id'})
-      Team.hasMany(models.Tournament, {foreignKey: 'tournament_id'})
+      Team.hasMany(models.Team_member, {foreignKey: 'team_id'})
     }
   }
   Team.init({
