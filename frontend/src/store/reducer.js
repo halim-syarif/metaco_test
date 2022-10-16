@@ -1,8 +1,10 @@
 const initialState = {
     loading: false,
     errorMessage: '',
+    successMessage: '',
     users : [],
-    usersCount: 0
+    usersCount: 0,
+    tournaments: []
 }
 
 export default function reducer(state = initialState, action) {
@@ -15,6 +17,8 @@ export default function reducer(state = initialState, action) {
             return {...state, users: action.payload} 
         case "SET_USER_COUNT":
             return{...state, usersCount: action.payload} 
+        case "SET_TOURNAMENT_DATA":
+            return{...state, tournaments: action.payload} 
         default:
             return state;
     }

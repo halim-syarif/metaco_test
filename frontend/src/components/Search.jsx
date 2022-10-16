@@ -1,6 +1,5 @@
 import React from "react";
 import IcSearch from "../assets/img/search";
-import "../assets/styles/index.css"
 
 export default function Search({setSearchName, searchName, placeholder, findSearch}) {
 

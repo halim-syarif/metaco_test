@@ -13,7 +13,6 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
-            {/* <Route path='/login' component={Login}/> */}
             <Route path='/*' component={App}/>
         </Switch>
       </BrowserRouter>

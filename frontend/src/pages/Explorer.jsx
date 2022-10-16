@@ -48,7 +48,7 @@ export default function Explorer() {
 
   return (
     <div className="body">
-      <div>
+      <div className="header">
         <p style={{color: '#343a40', marginRight: '10px'}}>Home<span style={{color: '#fff'}}>{' '}/ Gamer Explorer</span></p>
         <div className="row">
           <Search placeholder={'Search'} searchName={searchName} setSearchName={setSearchName} findSearch={fetchData}/>
@@ -67,7 +67,7 @@ export default function Explorer() {
         </div>
       </div>
       <div className="body-container">
-        <p>Hasil : 2000 Player</p>
+        <p>Hasil : {usersCount} Player</p>
         <div className="grid-container">
           {
             users.length > 0 && users.map(el => {
@@ -75,18 +75,20 @@ export default function Explorer() {
             })
           }
         </div>
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel=">"
-          onPageChange={handlePageClick}
-          className="pagination"
-          pageRangeDisplayed={2}
-          marginPagesDisplayed={3}
-          pageCount={pageCount}
-          previousLabel="<"
-          activeClassName="active"
-          renderOnZeroPageCount={null}
-        />
+        <div style={{marginTop: '25px'}}>
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel=">"
+            onPageChange={handlePageClick}
+            className="pagination"
+            pageRangeDisplayed={2}
+            marginPagesDisplayed={3}
+            pageCount={pageCount}
+            previousLabel="<"
+            activeClassName="active"
+            renderOnZeroPageCount={null}
+          />
+        </div>
       </div>
     </div>
   );
