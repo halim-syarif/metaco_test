@@ -34,7 +34,7 @@ export default function LeaderBoard() {
                     <td style={{textAlign: "left", width: "350px", display: "flex", flexDirection: "row", alignItems: "center" }}>
                       {
                         el.logo ? (
-                          <img src={el.logo} alt={el.name} height={30} width={30} />
+                          <img src={el.logo} alt={".."} height={30} width={30} />
                         ) : (
                           <img src="https://metaco.gg/images/default-image-reward-thumb.svg" alt={"metaco_img"} height={30} width={30} />
                         )
