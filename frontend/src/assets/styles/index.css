@@ -28,6 +28,42 @@ nav a:hover {
   color: #ffffff;
 }
 
+.container {
+  margin: 50px 0;
+  padding: 15px;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+table tr {
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+table thead tr td {
+  text-align: center;
+  font-weight: 600;
+}
+
+table tbody tr {
+  background-color: #343a40;
+  border-radius: 10px;
+  padding: 20px 0;
+  margin: 15px 0;
+}
+
+.active {
+  border: 1px solid #007bff;
+}
+
+table tbody tr td {
+  width: 200px;
+  text-align: center;
+}
 
 footer {
   display: flex;

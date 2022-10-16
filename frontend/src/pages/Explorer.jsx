@@ -61,10 +61,7 @@ export default function Explorer() {
           </div>
           <button className="grey-button" style={{marginLeft: "20px", width: "100px"}} onClick={clearData}>Clear</button>
         </div>
-        <div className="row" style={{ marginTop: "20px"}}>
-          <button className="blue-button">Team</button>
-          <button className="grey-button" style={{marginLeft: "20px"}}>Player</button>
-        </div>
+        <button className="blue-button" style={{ marginTop: "20px"}}>Player</button>
       </div>
       <div className="body-container">
         <p>Hasil : {usersCount} Player</p>

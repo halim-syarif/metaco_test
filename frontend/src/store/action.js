@@ -43,6 +43,14 @@ export function setTournamentData(payload) {
 }
 
 
+export function setLeaderboardData(payload) {
+  return {
+    type: 'SET_LEADERBOARD_DATA',
+    payload
+  }
+}
+
+
 export function getUsers(limit, offset, name){
   return (dispatch) => {
     dispatch(setLoading(true))
@@ -122,6 +130,20 @@ export function deleteWinner(tournament_id, position){
     .catch(err => {
       dispatch(setErrorMessage(err.response.data.message))
       dispatch(getAllTournament())
+    })
+    .finally(() => dispatch(setLoading(false)))
+  }
+}
+
+export function getLeaderBoard(){
+  return (dispatch) => {
+    dispatch(setLoading(true))
+    appApi.get(`/tournament/leaderboard`)
+    .then(response => {
+      dispatch(setLeaderboardData(response.data))
+    })
+    .catch(err => {
+      dispatch(setErrorMessage(err.response.data.message))
     })
     .finally(() => dispatch(setLoading(false)))
   }
