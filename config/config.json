@@ -9,6 +9,6 @@
   },
   "production": {
     "dialect": "sqlite",
-    "storage": "./db/metaco_test.db"
+    "storage": "./db/metaco_test.db" 
   }
 }
