@@ -209,6 +209,20 @@ class TournamentController {
       next(err);
     }
   }
+
+  static async getLeaderBoard(req, res, next){
+    try {
+      const option = {
+        order: [["id", "ASC"]],
+        group: "team_id"
+      }
+
+      const data = await Tournament_result.findAll(option)
+      res.status(200).json(data);
+    } catch (err) {
+      next(err)
+    }
+  }
 }
 
 module.exports = TournamentController;
