@@ -8,7 +8,9 @@
     "storage": "./db/metaco_test.db"
   },
   "production": {
-    "dialect": "sqlite",
-    "storage": "/db/metaco_test.db"
+    "dialect": "postgresql",
+    "storage": "metaco.db",
+    "pool": 5,
+    "timeout": 5000
   }
 }
