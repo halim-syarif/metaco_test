@@ -209,7 +209,6 @@ class TournamentController {
       next(err);
     }
   }
-<<<<<<< HEAD
 
   static async getLeaderBoard(req, res, next){
     try {
@@ -232,8 +231,6 @@ class TournamentController {
       next(err)
     }
   }
-=======
->>>>>>> 6cca75b (create crud tournament)
 }
 
 module.exports = TournamentController;
