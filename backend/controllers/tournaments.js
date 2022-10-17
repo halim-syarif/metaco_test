@@ -215,7 +215,7 @@ class TournamentController {
       const option = {
         attributes: ["id", "name", "captain_id", "logo", [Sequelize.fn("SUM", Sequelize.col("Tournament_results.point")), "total_point"]],
         include: [{
-          attributes: ["id", "position", "point", "tournament_id"],
+          attributes: [],
           model: Tournament_result,
           raw: true
         },{
