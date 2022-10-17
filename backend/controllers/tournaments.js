@@ -222,7 +222,7 @@ class TournamentController {
           model: User
         }],
         order: [["total_point", "DESC"]],
-        group: "Team.id"
+        group: ["Tournament_results.id", "Team.id"]
       }
 
       const data = await Team.findAll(option)
