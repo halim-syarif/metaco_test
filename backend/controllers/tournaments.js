@@ -213,7 +213,7 @@ class TournamentController {
   static async getLeaderBoard(req, res, next){
     try {
       const option = {
-        attributes: ["id", "name", "captain_id", "logo", [Sequelize.fn("SUM", Sequelize.col("Tournament_results.point")), "total_point"]],
+        attributes: ["id", "name", "captain_id", "logo", [Sequelize.fn("sum", Sequelize.col("Tournament_results.point")), "total_point"]],
         include: [{
           attributes: ["id", "position", "point", "tournament_id"],
           model: Tournament_result,
