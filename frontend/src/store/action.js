@@ -50,6 +50,35 @@ export function setLeaderboardData(payload) {
   }
 }
 
+export function setSuccessMessage(payload) {
+  return {
+    type: 'SET_ERROR_MESSAGE',
+    payload
+  }
+}
+
+export function setUserData(payload) {
+  return {
+    type: 'SET_USER_DATA',
+    payload
+  }
+}
+
+export function setUserCount(payload) {
+  return {
+    type: 'SET_USER_COUNT',
+    payload
+  }
+}
+
+export function setTournamentData(payload) {
+  return {
+    type: 'SET_TOURNAMENT_DATA',
+    payload
+  }
+}
+
+
 export function getUsers(limit, offset, name){
   return (dispatch) => {
     dispatch(setLoading(true))
