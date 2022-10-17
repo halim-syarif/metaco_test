@@ -27,6 +27,9 @@ module.exports = (sequelize, DataTypes) => {
     tournament_id: {
       allowNull: false,
       type: DataTypes.INTEGER,
+    },
+    total_point: {
+      type: DataTypes.INTEGER,
     }
   }, {
     sequelize,
