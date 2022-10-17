@@ -217,6 +217,7 @@ class TournamentController {
         include: [{
           attributes: ["id", "position", "point", "tournament_id"],
           model: Tournament_result,
+          raw: true
         },{
           attributes: ["id", "email", "name", "coin"],
           model: User
