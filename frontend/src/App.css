@@ -8,12 +8,17 @@
   padding: 100px 130px 50px;
   text-align: start;
   background-color: #212529;
-  /* position:absolute;  */
   min-height: 80vh;
   top:0; 
   bottom:0; 
   right:0; 
   left:0;
+}
+
+.home {
+  background-color: #212529;
+  background-image: url("https://metaco.gg/_next/image?url=https%3A%2F%2Fmetacoweb.s3.amazonaws.com%2Fbanner%2Fimages%2F723de22c6eb6b28b52f24fddf051ff45.jpg&w=3840&q=75");
+  height: 100vh;
 }
 
 .row {

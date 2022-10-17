@@ -103,7 +103,7 @@ export default function TournamentCard({ data }) {
       <p>Participant : {data.team_count} Team</p>
       <p>Winner</p>
       <div className="row" style={{ justifyContent: "space-between" }}>
-        <p>Juara 1 : </p>
+        <p>Juara 1: </p>
         <div className={editMode["1"] ? "select-wrapper" : ""}>
           <select id={"winner1-" + data.id} className={editMode["1"] ? "gray" : ""} style={{marginLeft: "20px"}} disabled={!editMode["1"]} >
             <option value="" id={"default1-" + data.id} disabled >Select Winner</option>
@@ -132,7 +132,7 @@ export default function TournamentCard({ data }) {
         </div>
       </div>
       <div className="row" style={{ justifyContent: "space-between" }}>
-        <p>Juara 2 : </p>
+        <p>Juara 2: </p>
         <div className={editMode["2"] ? "select-wrapper" : ""}>
           <select id={"winner2-" + data.id} className={editMode["2"] ? "gray" : ""} style={{marginLeft: "20px"}} disabled={!editMode["2"]} >
             <option value="" id={"default2-" + data.id} disabled >Select Winner</option>
@@ -161,7 +161,7 @@ export default function TournamentCard({ data }) {
         </div>
       </div>
       <div className="row" style={{ justifyContent: "space-between" }}>
-        <p>Juara 3 : </p>
+        <p>Juara 3: </p>
         <div className={editMode["3"] ? "select-wrapper" : ""}>
           <select id={"winner3-" + data.id} className={editMode["3"] ? "gray" : ""} style={{marginLeft: "20px"}} disabled={!editMode["3"]} >
             <option value="" id={"default3-" + data.id} disabled >Select Winner</option>

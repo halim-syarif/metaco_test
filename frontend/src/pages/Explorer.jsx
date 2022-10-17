@@ -5,10 +5,11 @@ import { getUsers } from "../store/action";
 import Search from "../components/Search";
 import Player from "../components/Player"
 import ReactPaginate from 'react-paginate';
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 export default function Explorer() {
   const dispatch = useDispatch()
-  const { users, usersCount } = useSelector(state => state)
+  const { loading, users, usersCount } = useSelector(state => state)
 
   const [itemsPerPage, setItemsPerPage] = useState(6)
   const [itemOffset, setItemOffset] = useState(0);
@@ -64,6 +65,14 @@ export default function Explorer() {
         <button className="blue-button" style={{ marginTop: "20px"}}>Player</button>
       </div>
       <div className="body-container">
+      <div style={{ textAlign:"center", width: "80vw"}}>
+        <ScaleLoader
+          color="lightBlue"
+          height="20px"
+          width="10px"
+          loading={loading}
+        />
+      </div>
         <p>Hasil : {usersCount} Player</p>
         <div className="grid-container">
           {

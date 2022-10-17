@@ -2,10 +2,11 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getLeaderBoard } from "../store/action";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 export default function LeaderBoard() {
   const dispatch = useDispatch()
-  const { leaderBoards } = useSelector(state => state)
+  const { loading, leaderBoards } = useSelector(state => state)
 
   useEffect(() => {
     dispatch(getLeaderBoard())
@@ -15,6 +16,14 @@ export default function LeaderBoard() {
   return (
     <div className="body">
       <h1 style={{textAlign: "center"}}>LeaderBoard</h1>
+      <div style={{ textAlign:"center", width: "80vw"}}>
+        <ScaleLoader
+          color="lightBlue"
+          height="20px"
+          width="10px"
+          loading={loading}
+        />
+      </div>
       <div className="container">
         <table>
           <thead>
