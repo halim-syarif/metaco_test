@@ -140,7 +140,7 @@ export function getLeaderBoard(){
     appApi.get(`/tournament/leaderboard`)
     .then(response => {
       let leaderBoards = response.data
-      leaderBoards.sort((a,b) => b.total_point - a.total_point)
+      leaderBoards.sort((a,b) => Number(b.total_point) - Number(a.total_point))
       dispatch(setLeaderboardData(response.data))
     })
     .catch(err => {
